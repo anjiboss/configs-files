@@ -1,4 +1,4 @@
 # Config Files
 
-- VSCode setting.json.
-
+- VSCode:  setting.json
+- I3wm: [config](./config)
