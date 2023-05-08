@@ -1,4 +1,4 @@
 # Config Files
 
-- VSCode:  [setting.json](./vscode_setting.json)
-- I3wm: [config](./config)
+-   I3wm: [config](./config)
+-   Kmonad: [config.kbd](./kmonad/config.kbd)

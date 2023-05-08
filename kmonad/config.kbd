@@ -1,17 +1,20 @@
-#| ---- wired
+#| ---- wired  
 (defcfg
-  input  (device-file "/dev/input/by-id/usb-Apple_Inc._Apple_Keyboard-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-SINO_WEALTH_Bluetooth_Keyboard-event-kbd")
   output (uinput-sink "KMonad kbd")
   fallthrough true
+  allow-cmd true
 )
 ---- |#
 
-#| --- wireless --- |#
+#| --- wireless --|# 
 (defcfg
   input  (device-file "/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd")
   output (uinput-sink "KMonad kbd")
   fallthrough true
+  allow-cmd true
 )
+#|  --- |#
 
 (defsrc
   esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
@@ -28,6 +31,8 @@
 
 (defalias  
 	xword (around rctrl bspc)
+  jap  (cmd-button "ibus engine anthy")
+  eng  (cmd-button "ibus engine xkb:us::eng")
 )
 
 (deflayer base
@@ -36,7 +41,7 @@
   tab     q     w    e    r    t    y    u    i    o    p    [     ]      ret               pgup
   @emacl  a     s    d    f    g    h    j    k    l    ;    '     \         pgdn
   lsft    z     x    c    v    b    n    m    ,    .    /    rsft         up                end
-  lctrl   lmet  lalt      spc       ralt cmps rctl                 left   down   rght
+  lctrl   lmet  lalt      spc     @jap  @eng rctrl             left   down   rght
  )
 
 (deflayer emac
@@ -45,7 +50,7 @@
   _     _    @xword  end  _    _    _    _    _    _    up  _   _   _              _
   _     home _       _    rght _    _    _    _    _    _   _   _                  _
   _     _    _       _    _    left down _    _    _    _   _       _              _
-  _     _    _            _         _    _    _                 _   _   _
+  _     _    _            _         _    _    _                _   _   _
  )
 
 
