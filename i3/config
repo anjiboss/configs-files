@@ -216,7 +216,8 @@ bindsym $mod+o exec $launcher-clipboard-remove
 exec barrier
 # exec picom
 exec_always feh --bg-scale ~/wallpaper/wp-1.jpg
-exec sleep 1 & kmonad ~/.config/kmonad/config.kbd
+# Kmonad now is changed to run by start script w/ systemd
+# exec sleep 1 & kmonad ~/.config/kmonad/config.kbd
 exec /usr/bin/dunst
 exec polybar -r
 exec pbgopy serve

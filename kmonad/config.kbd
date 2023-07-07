@@ -1,20 +1,19 @@
-#| ---- wired  
+#| ---- wired  ---- |#
 (defcfg
   input  (device-file "/dev/input/by-id/usb-SINO_WEALTH_Bluetooth_Keyboard-event-kbd")
   output (uinput-sink "KMonad kbd")
   fallthrough true
   allow-cmd true
 )
----- |#
 
-#| --- wireless --|# 
+#| --- wireless 
 (defcfg
   input  (device-file "/dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd")
   output (uinput-sink "KMonad kbd")
   fallthrough true
   allow-cmd true
 )
-#|  --- |#
+--- |#
 
 (defsrc
   esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
